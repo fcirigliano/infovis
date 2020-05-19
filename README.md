@@ -3,3 +3,5 @@
 
 [Tablero Semana 18](https://fcirigliano.github.io/infovis/semana18.html)
 
+[Tablero Semana 19](https://fcirigliano.github.io/infovis/semana19.html)
+

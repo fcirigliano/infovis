@@ -5,3 +5,5 @@
 
 [Tablero Semana 19](https://fcirigliano.github.io/infovis/semana19.html)
 
+[TP - Final](https://fcirigliano.github.io/infovis/tpfinal.html)
+

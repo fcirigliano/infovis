@@ -9,4 +9,6 @@
 
 [TP - Final](https://fcirigliano.github.io/infovis/tpfinal.html)
 
+[TP - Final - Tiempo](https://fcirigliano.github.io/infovis/tpfinal_tiempo.html)
+
 [TP - Final - Presentación](https://fcirigliano.github.io/infovis/tpfinal_presentacion.html)

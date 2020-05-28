@@ -7,6 +7,8 @@
 
 [Tablero Semana 20](https://fcirigliano.github.io/infovis/semana20.html)
 
+[Tablero Semana 21](https://fcirigliano.github.io/infovis/semana21.html)
+
 [TP - Final](https://fcirigliano.github.io/infovis/tpfinal.html)
 
 [TP - Final - Tiempo](https://fcirigliano.github.io/infovis/tpfinal_tiempo.html)

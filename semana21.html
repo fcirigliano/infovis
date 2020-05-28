@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vega-Lite Bar Chart</title>
+    <meta charset="utf-8" />
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.12.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+
+    <style media="screen">
+      /* Add space between Vega-Embed links  */
+      .vega-actions a {
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Industria de la Musica</h1>
+    <!-- Container for the visualization -->
+    <div id="vis"></div>
+
+    <script>
+      // Assign the specification to a local variable vlSpec.
+      var vlSpec =  {
+  "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}},
+  "data": {"name": "data-820bacdc900b34a8765e5d47cc0b491e"},
+  "mark": "area",
+  "encoding": {
+    "color": {
+      "type": "nominal",
+      "field": "formato",
+      "scale": {"scheme": "tableau20"}
+    },
+    "x": {
+      "type": "temporal",
+      "field": "fecha",
+      "timeUnit": "year",
+      "title": "Año"
+    },
+    "y": {
+      "type": "quantitative",
+      "axis": null,
+      "field": "ingresos",
+      "stack": "center"
+    }
+  },
+  "height": 500,
+  "width": 800,
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json",
+  "datasets": {
+    "data-820bacdc900b34a8765e5d47cc0b491e": [
+      {"fecha": "1973-12-31", "formato": "8 - Track", "ingresos": 2815.7},
+      {"fecha": "1973-12-31", "formato": "Cassette", "ingresos": 437.6},
+      {"fecha": "1973-12-31", "formato": "LP/EP", "ingresos": 7174.5},
+      {"fecha": "1973-12-31", "formato": "Other Tapes", "ingresos": 89.8},
+      {"fecha": "1973-12-31", "formato": "Vinyl Single", "ingresos": 1094},
+      {"fecha": "1974-12-31", "formato": "8 - Track", "ingresos": 2848},
+      {"fecha": "1974-12-31", "formato": "Cassette", "ingresos": 452.2},
+      {"fecha": "1974-12-31", "formato": "LP/EP", "ingresos": 7031.9},
+      {"fecha": "1974-12-31", "formato": "Other Tapes", "ingresos": 69},
+      {"fecha": "1974-12-31", "formato": "Vinyl Single", "ingresos": 1006},
+      {"fecha": "1975-12-31", "formato": "8 - Track", "ingresos": 2770.4},
+      {"fecha": "1975-12-31", "formato": "Cassette", "ingresos": 469.5},
+      {"fecha": "1975-12-31", "formato": "LP/EP", "ingresos": 7056.7},
+      {"fecha": "1975-12-31", "formato": "Other Tapes", "ingresos": 48.5},
+      {"fecha": "1975-12-31", "formato": "Vinyl Single", "ingresos": 1005},
+      {"fecha": "1976-12-31", "formato": "8 - Track", "ingresos": 3047.2},
+      {"fecha": "1976-12-31", "formato": "Cassette", "ingresos": 654.6},
+      {"fecha": "1976-12-31", "formato": "LP/EP", "ingresos": 7472},
+      {"fecha": "1976-12-31", "formato": "Other Tapes", "ingresos": 22.9},
+      {"fecha": "1976-12-31", "formato": "Vinyl Single", "ingresos": 1101.3},
+      {"fecha": "1977-12-31", "formato": "8 - Track", "ingresos": 3421.4},
+      {"fecha": "1977-12-31", "formato": "Cassette", "ingresos": 1053},
+      {"fecha": "1977-12-31", "formato": "LP/EP", "ingresos": 9260.6},
+      {"fecha": "1977-12-31", "formato": "Vinyl Single", "ingresos": 1034},
+      {"fecha": "1978-12-31", "formato": "8 - Track", "ingresos": 3717.2},
+      {"fecha": "1978-12-31", "formato": "Cassette", "ingresos": 1763.7},
+      {"fecha": "1978-12-31", "formato": "LP/EP", "ingresos": 9698.1},
+      {"fecha": "1978-12-31", "formato": "Vinyl Single", "ingresos": 1020.7},
+      {"fecha": "1979-12-31", "formato": "8 - Track", "ingresos": 2409.7},
+      {"fecha": "1979-12-31", "formato": "Cassette", "ingresos": 2044.6},
+      {"fecha": "1979-12-31", "formato": "LP/EP", "ingresos": 7243.6},
+      {"fecha": "1979-12-31", "formato": "Vinyl Single", "ingresos": 1245.2},
+      {"fecha": "1980-12-31", "formato": "8 - Track", "ingresos": 1635.1},
+      {"fecha": "1980-12-31", "formato": "Cassette", "ingresos": 2187.4},
+      {"fecha": "1980-12-31", "formato": "LP/EP", "ingresos": 6825.8},
+      {"fecha": "1980-12-31", "formato": "Vinyl Single", "ingresos": 775.7},
+      {"fecha": "1981-12-31", "formato": "8 - Track", "ingresos": 880.3},
+      {"fecha": "1981-12-31", "formato": "Cassette", "ingresos": 2989.1},
+      {"fecha": "1981-12-31", "formato": "LP/EP", "ingresos": 6586.1},
+      {"fecha": "1981-12-31", "formato": "Vinyl Single", "ingresos": 721.1},
+      {"fecha": "1982-12-31", "formato": "8 - Track", "ingresos": 95.4},
+      {"fecha": "1982-12-31", "formato": "Cassette", "ingresos": 3667.9},
+      {"fecha": "1982-12-31", "formato": "LP/EP", "ingresos": 5100.2},
+      {"fecha": "1982-12-31", "formato": "Vinyl Single", "ingresos": 749.8},
+      {"fecha": "1983-12-31", "formato": "CD", "ingresos": 44.1},
+      {"fecha": "1983-12-31", "formato": "Cassette", "ingresos": 4648.3},
+      {"fecha": "1983-12-31", "formato": "LP/EP", "ingresos": 4335.4},
+      {"fecha": "1983-12-31", "formato": "Vinyl Single", "ingresos": 691.2},
+      {"fecha": "1984-12-31", "formato": "CD", "ingresos": 254.2},
+      {"fecha": "1984-12-31", "formato": "Cassette", "ingresos": 5865.8},
+      {"fecha": "1984-12-31", "formato": "LP/EP", "ingresos": 3811},
+      {"fecha": "1984-12-31", "formato": "Vinyl Single", "ingresos": 735},
+      {"fecha": "1985-12-31", "formato": "CD", "ingresos": 925.4},
+      {"fecha": "1985-12-31", "formato": "Cassette", "ingresos": 5729.7},
+      {"fecha": "1985-12-31", "formato": "LP/EP", "ingresos": 3042.5},
+      {"fecha": "1985-12-31", "formato": "Vinyl Single", "ingresos": 667.7},
+      {"fecha": "1986-12-31", "formato": "CD", "ingresos": 2169.6},
+      {"fecha": "1986-12-31", "formato": "Cassette", "ingresos": 5830.4},
+      {"fecha": "1986-12-31", "formato": "LP/EP", "ingresos": 2293},
+      {"fecha": "1986-12-31", "formato": "Vinyl Single", "ingresos": 532.1},
+      {"fecha": "1987-12-31", "formato": "CD", "ingresos": 3586.4},
+      {"fecha": "1987-12-31", "formato": "Cassette", "ingresos": 6660.8},
+      {"fecha": "1987-12-31", "formato": "Cassette Single", "ingresos": 32.2},
+      {"fecha": "1987-12-31", "formato": "LP/EP", "ingresos": 1784.9},
+      {"fecha": "1987-12-31", "formato": "Vinyl Single", "ingresos": 457.5},
+      {"fecha": "1988-12-31", "formato": "CD", "ingresos": 4516.5},
+      {"fecha": "1988-12-31", "formato": "CD Single", "ingresos": 21.2},
+      {"fecha": "1988-12-31", "formato": "Cassette", "ingresos": 7315.5},
+      {"fecha": "1988-12-31", "formato": "Cassette Single", "ingresos": 123.8},
+      {"fecha": "1988-12-31", "formato": "LP/EP", "ingresos": 1150.1},
+      {"fecha": "1988-12-31", "formato": "Vinyl Single", "ingresos": 389.9},
+      {"fecha": "1989-12-31", "formato": "CD", "ingresos": 5335.2},
+      {"fecha": "1989-12-31", "formato": "Cassette", "ingresos": 6898.2},
+      {"fecha": "1989-12-31", "formato": "Cassette Single", "ingresos": 401.2},
+      {"fecha": "1989-12-31", "formato": "LP/EP", "ingresos": 454.2},
+      {
+        "fecha": "1989-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 237.9
+      },
+      {"fecha": "1989-12-31", "formato": "Vinyl Single", "ingresos": 240},
+      {"fecha": "1990-12-31", "formato": "CD", "ingresos": 6751.5},
+      {"fecha": "1990-12-31", "formato": "CD Single", "ingresos": 11.7},
+      {"fecha": "1990-12-31", "formato": "Cassette", "ingresos": 6792.2},
+      {"fecha": "1990-12-31", "formato": "Cassette Single", "ingresos": 504.5},
+      {"fecha": "1990-12-31", "formato": "LP/EP", "ingresos": 169.2},
+      {
+        "fecha": "1990-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 337
+      },
+      {"fecha": "1990-12-31", "formato": "Vinyl Single", "ingresos": 184.7},
+      {"fecha": "1991-12-31", "formato": "CD", "ingresos": 8142.2},
+      {"fecha": "1991-12-31", "formato": "CD Single", "ingresos": 65.9},
+      {"fecha": "1991-12-31", "formato": "Cassette", "ingresos": 5668},
+      {"fecha": "1991-12-31", "formato": "Cassette Single", "ingresos": 432.5},
+      {"fecha": "1991-12-31", "formato": "LP/EP", "ingresos": 55.2},
+      {
+        "fecha": "1991-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 221.7
+      },
+      {"fecha": "1991-12-31", "formato": "Vinyl Single", "ingresos": 119.9},
+      {"fecha": "1992-12-31", "formato": "CD", "ingresos": 9706},
+      {"fecha": "1992-12-31", "formato": "CD Single", "ingresos": 82.2},
+      {"fecha": "1992-12-31", "formato": "Cassette", "ingresos": 5678.6},
+      {"fecha": "1992-12-31", "formato": "Cassette Single", "ingresos": 544.5},
+      {"fecha": "1992-12-31", "formato": "LP/EP", "ingresos": 24.6},
+      {
+        "fecha": "1992-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 286.8
+      },
+      {"fecha": "1992-12-31", "formato": "Vinyl Single", "ingresos": 121},
+      {"fecha": "1993-12-31", "formato": "CD", "ingresos": 11520.3},
+      {"fecha": "1993-12-31", "formato": "CD Single", "ingresos": 81},
+      {"fecha": "1993-12-31", "formato": "Cassette", "ingresos": 5158.8},
+      {"fecha": "1993-12-31", "formato": "Cassette Single", "ingresos": 528.1},
+      {"fecha": "1993-12-31", "formato": "LP/EP", "ingresos": 18.8},
+      {
+        "fecha": "1993-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 377.4
+      },
+      {"fecha": "1993-12-31", "formato": "Vinyl Single", "ingresos": 90.6},
+      {"fecha": "1994-12-31", "formato": "CD", "ingresos": 14601.9},
+      {"fecha": "1994-12-31", "formato": "CD Single", "ingresos": 96.8},
+      {"fecha": "1994-12-31", "formato": "Cassette", "ingresos": 5134.5},
+      {"fecha": "1994-12-31", "formato": "Cassette Single", "ingresos": 474.2},
+      {"fecha": "1994-12-31", "formato": "LP/EP", "ingresos": 30.7},
+      {
+        "fecha": "1994-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 398.7
+      },
+      {"fecha": "1994-12-31", "formato": "Vinyl Single", "ingresos": 81.4},
+      {"fecha": "1995-12-31", "formato": "CD", "ingresos": 15731},
+      {"fecha": "1995-12-31", "formato": "CD Single", "ingresos": 186},
+      {"fecha": "1995-12-31", "formato": "Cassette", "ingresos": 3864.4},
+      {"fecha": "1995-12-31", "formato": "Cassette Single", "ingresos": 396.4},
+      {"fecha": "1995-12-31", "formato": "LP/EP", "ingresos": 42.1},
+      {
+        "fecha": "1995-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 369.6
+      },
+      {"fecha": "1995-12-31", "formato": "Vinyl Single", "ingresos": 78.3},
+      {"fecha": "1996-12-31", "formato": "CD", "ingresos": 16187.9},
+      {"fecha": "1996-12-31", "formato": "CD Single", "ingresos": 300},
+      {"fecha": "1996-12-31", "formato": "Cassette", "ingresos": 3104.5},
+      {"fecha": "1996-12-31", "formato": "Cassette Single", "ingresos": 308.5},
+      {"fecha": "1996-12-31", "formato": "LP/EP", "ingresos": 60},
+      {
+        "fecha": "1996-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 384.7
+      },
+      {"fecha": "1996-12-31", "formato": "Vinyl Single", "ingresos": 77.4},
+      {"fecha": "1997-12-31", "formato": "CD", "ingresos": 15793.5},
+      {"fecha": "1997-12-31", "formato": "CD Single", "ingresos": 434.4},
+      {"fecha": "1997-12-31", "formato": "Cassette", "ingresos": 2425.5},
+      {"fecha": "1997-12-31", "formato": "Cassette Single", "ingresos": 212.6},
+      {"fecha": "1997-12-31", "formato": "LP/EP", "ingresos": 53},
+      {
+        "fecha": "1997-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 515.9
+      },
+      {"fecha": "1997-12-31", "formato": "Vinyl Single", "ingresos": 56.7},
+      {"fecha": "1998-12-31", "formato": "CD", "ingresos": 17905.4},
+      {"fecha": "1998-12-31", "formato": "CD Single", "ingresos": 334.4},
+      {"fecha": "1998-12-31", "formato": "Cassette", "ingresos": 2227},
+      {"fecha": "1998-12-31", "formato": "Cassette Single", "ingresos": 148.1},
+      {"fecha": "1998-12-31", "formato": "LP/EP", "ingresos": 53.3},
+      {
+        "fecha": "1998-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 796.8
+      },
+      {"fecha": "1998-12-31", "formato": "Vinyl Single", "ingresos": 40.3},
+      {"fecha": "1999-12-31", "formato": "CD", "ingresos": 19667.3},
+      {"fecha": "1999-12-31", "formato": "CD Single", "ingresos": 341.3},
+      {"fecha": "1999-12-31", "formato": "Cassette", "ingresos": 1629.1},
+      {"fecha": "1999-12-31", "formato": "Cassette Single", "ingresos": 73.7},
+      {"fecha": "1999-12-31", "formato": "LP/EP", "ingresos": 48.8},
+      {
+        "fecha": "1999-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 578.1
+      },
+      {"fecha": "1999-12-31", "formato": "Vinyl Single", "ingresos": 42.8},
+      {"fecha": "2000-12-31", "formato": "CD", "ingresos": 19618.9},
+      {"fecha": "2000-12-31", "formato": "CD Single", "ingresos": 211.9},
+      {"fecha": "2000-12-31", "formato": "Cassette", "ingresos": 929.4},
+      {"fecha": "2000-12-31", "formato": "Cassette Single", "ingresos": 6.8},
+      {"fecha": "2000-12-31", "formato": "LP/EP", "ingresos": 41.1},
+      {
+        "fecha": "2000-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 418.5
+      },
+      {"fecha": "2000-12-31", "formato": "Vinyl Single", "ingresos": 39},
+      {"fecha": "2001-12-31", "formato": "CD", "ingresos": 18635.7},
+      {"fecha": "2001-12-31", "formato": "CD Single", "ingresos": 114.6},
+      {"fecha": "2001-12-31", "formato": "Cassette", "ingresos": 524.6},
+      {"fecha": "2001-12-31", "formato": "DVD Audio", "ingresos": 8.7},
+      {"fecha": "2001-12-31", "formato": "LP/EP", "ingresos": 39.6},
+      {
+        "fecha": "2001-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 475.2
+      },
+      {"fecha": "2001-12-31", "formato": "Vinyl Single", "ingresos": 45.3},
+      {"fecha": "2002-12-31", "formato": "CD", "ingresos": 17115.9},
+      {"fecha": "2002-12-31", "formato": "CD Single", "ingresos": 27.9},
+      {"fecha": "2002-12-31", "formato": "Cassette", "ingresos": 298.1},
+      {"fecha": "2002-12-31", "formato": "DVD Audio", "ingresos": 12.1},
+      {"fecha": "2002-12-31", "formato": "LP/EP", "ingresos": 29.1},
+      {
+        "fecha": "2002-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 409.8
+      },
+      {"fecha": "2002-12-31", "formato": "Vinyl Single", "ingresos": 35.4},
+      {"fecha": "2003-12-31", "formato": "CD", "ingresos": 15607.4},
+      {"fecha": "2003-12-31", "formato": "CD Single", "ingresos": 50},
+      {"fecha": "2003-12-31", "formato": "Cassette", "ingresos": 150.2},
+      {"fecha": "2003-12-31", "formato": "DVD Audio", "ingresos": 11.1},
+      {"fecha": "2003-12-31", "formato": "LP/EP", "ingresos": 30.2},
+      {
+        "fecha": "2003-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 555.6
+      },
+      {"fecha": "2003-12-31", "formato": "SACD", "ingresos": 36.5},
+      {"fecha": "2003-12-31", "formato": "Vinyl Single", "ingresos": 29.9},
+      {"fecha": "2004-12-31", "formato": "CD", "ingresos": 15491.7},
+      {"fecha": "2004-12-31", "formato": "CD Single", "ingresos": 20.3},
+      {"fecha": "2004-12-31", "formato": "Cassette", "ingresos": 32.1},
+      {"fecha": "2004-12-31", "formato": "DVD Audio", "ingresos": 8.8},
+      {"fecha": "2004-12-31", "formato": "Download Album", "ingresos": 61.6},
+      {"fecha": "2004-12-31", "formato": "Download Single", "ingresos": 186.8},
+      {"fecha": "2004-12-31", "formato": "LP/EP", "ingresos": 26.1},
+      {
+        "fecha": "2004-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 821.8
+      },
+      {"fecha": "2004-12-31", "formato": "SACD", "ingresos": 22.5},
+      {
+        "fecha": "2004-12-31",
+        "formato": "SoundExchange Distributions",
+        "ingresos": 9.3
+      },
+      {"fecha": "2004-12-31", "formato": "Vinyl Single", "ingresos": 26.9},
+      {"fecha": "2005-12-31", "formato": "CD", "ingresos": 13771.4},
+      {"fecha": "2005-12-31", "formato": "CD Single", "ingresos": 14.3},
+      {"fecha": "2005-12-31", "formato": "Cassette", "ingresos": 17.1},
+      {"fecha": "2005-12-31", "formato": "DVD Audio", "ingresos": 14.7},
+      {"fecha": "2005-12-31", "formato": "Download Album", "ingresos": 177.6},
+      {
+        "fecha": "2005-12-31",
+        "formato": "Download Music Video",
+        "ingresos": 4.8
+      },
+      {"fecha": "2005-12-31", "formato": "Download Single", "ingresos": 475.6},
+      {"fecha": "2005-12-31", "formato": "Kiosk", "ingresos": 1.3},
+      {"fecha": "2005-12-31", "formato": "LP/EP", "ingresos": 18.6},
+      {
+        "fecha": "2005-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 788.3
+      },
+      {
+        "fecha": "2005-12-31",
+        "formato": "Paid Subscription",
+        "ingresos": 195.3
+      },
+      {
+        "fecha": "2005-12-31",
+        "formato": "Ringtones & Ringbacks",
+        "ingresos": 551.9
+      },
+      {"fecha": "2005-12-31", "formato": "SACD", "ingresos": 13.1},
+      {
+        "fecha": "2005-12-31",
+        "formato": "SoundExchange Distributions",
+        "ingresos": 26.7
+      },
+      {"fecha": "2005-12-31", "formato": "Vinyl Single", "ingresos": 17.3},
+      {"fecha": "2006-12-31", "formato": "CD", "ingresos": 11885.8},
+      {"fecha": "2006-12-31", "formato": "CD Single", "ingresos": 9.8},
+      {"fecha": "2006-12-31", "formato": "Cassette", "ingresos": 4.7},
+      {"fecha": "2006-12-31", "formato": "DVD Audio", "ingresos": 3},
+      {"fecha": "2006-12-31", "formato": "Download Album", "ingresos": 349.9},
+      {
+        "fecha": "2006-12-31",
+        "formato": "Download Music Video",
+        "ingresos": 25
+      },
+      {"fecha": "2006-12-31", "formato": "Download Single", "ingresos": 736.3},
+      {"fecha": "2006-12-31", "formato": "Kiosk", "ingresos": 2.4},
+      {"fecha": "2006-12-31", "formato": "LP/EP", "ingresos": 19.9},
+      {
+        "fecha": "2006-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 572.1
+      },
+      {
+        "fecha": "2006-12-31",
+        "formato": "Paid Subscription",
+        "ingresos": 261.5
+      },
+      {
+        "fecha": "2006-12-31",
+        "formato": "Ringtones & Ringbacks",
+        "ingresos": 981.3
+      },
+      {"fecha": "2006-12-31", "formato": "SACD", "ingresos": 7},
+      {
+        "fecha": "2006-12-31",
+        "formato": "SoundExchange Distributions",
+        "ingresos": 41.6
+      },
+      {"fecha": "2006-12-31", "formato": "Vinyl Single", "ingresos": 12.6},
+      {"fecha": "2007-12-31", "formato": "CD", "ingresos": 9190.7},
+      {"fecha": "2007-12-31", "formato": "CD Single", "ingresos": 15},
+      {"fecha": "2007-12-31", "formato": "Cassette", "ingresos": 3.7},
+      {"fecha": "2007-12-31", "formato": "DVD Audio", "ingresos": 3.5},
+      {"fecha": "2007-12-31", "formato": "Download Album", "ingresos": 613.4},
+      {
+        "fecha": "2007-12-31",
+        "formato": "Download Music Video",
+        "ingresos": 34.8
+      },
+      {"fecha": "2007-12-31", "formato": "Download Single", "ingresos": 1000.2},
+      {"fecha": "2007-12-31", "formato": "Kiosk", "ingresos": 3.2},
+      {"fecha": "2007-12-31", "formato": "LP/EP", "ingresos": 28.2},
+      {
+        "fecha": "2007-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 598
+      },
+      {
+        "fecha": "2007-12-31",
+        "formato": "Paid Subscription",
+        "ingresos": 288.6
+      },
+      {
+        "fecha": "2007-12-31",
+        "formato": "Ringtones & Ringbacks",
+        "ingresos": 1302.1
+      },
+      {"fecha": "2007-12-31", "formato": "SACD", "ingresos": 4.4},
+      {
+        "fecha": "2007-12-31",
+        "formato": "SoundExchange Distributions",
+        "ingresos": 44.6
+      },
+      {"fecha": "2007-12-31", "formato": "Vinyl Single", "ingresos": 4.9},
+      {"fecha": "2008-12-31", "formato": "CD", "ingresos": 6496.8},
+      {"fecha": "2008-12-31", "formato": "CD Single", "ingresos": 4.2},
+      {"fecha": "2008-12-31", "formato": "Cassette", "ingresos": 1.1},
+      {"fecha": "2008-12-31", "formato": "DVD Audio", "ingresos": 1.4},
+      {"fecha": "2008-12-31", "formato": "Download Album", "ingresos": 754.4},
+      {
+        "fecha": "2008-12-31",
+        "formato": "Download Music Video",
+        "ingresos": 49
+      },
+      {"fecha": "2008-12-31", "formato": "Download Single", "ingresos": 1225.7},
+      {"fecha": "2008-12-31", "formato": "Kiosk", "ingresos": 3.1},
+      {"fecha": "2008-12-31", "formato": "LP/EP", "ingresos": 67.3},
+      {
+        "fecha": "2008-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 269.9
+      },
+      {
+        "fecha": "2008-12-31",
+        "formato": "Paid Subscription",
+        "ingresos": 262.9
+      },
+      {
+        "fecha": "2008-12-31",
+        "formato": "Ringtones & Ringbacks",
+        "ingresos": 1160.2
+      },
+      {"fecha": "2008-12-31", "formato": "SACD", "ingresos": 3.7},
+      {
+        "fecha": "2008-12-31",
+        "formato": "SoundExchange Distributions",
+        "ingresos": 118.7
+      },
+      {"fecha": "2008-12-31", "formato": "Vinyl Single", "ingresos": 3.4},
+      {"fecha": "2009-12-31", "formato": "CD", "ingresos": 5146.6},
+      {"fecha": "2009-12-31", "formato": "CD Single", "ingresos": 3.7},
+      {"fecha": "2009-12-31", "formato": "DVD Audio", "ingresos": 1.9},
+      {"fecha": "2009-12-31", "formato": "Download Album", "ingresos": 887},
+      {
+        "fecha": "2009-12-31",
+        "formato": "Download Music Video",
+        "ingresos": 48.7
+      },
+      {"fecha": "2009-12-31", "formato": "Download Single", "ingresos": 1396.6},
+      {"fecha": "2009-12-31", "formato": "Kiosk", "ingresos": 7.5},
+      {"fecha": "2009-12-31", "formato": "LP/EP", "ingresos": 76},
+      {
+        "fecha": "2009-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 249.8
+      },
+      {
+        "fecha": "2009-12-31",
+        "formato": "Paid Subscription",
+        "ingresos": 245.7
+      },
+      {
+        "fecha": "2009-12-31",
+        "formato": "Ringtones & Ringbacks",
+        "ingresos": 837.5
+      },
+      {"fecha": "2009-12-31", "formato": "SACD", "ingresos": 2.9},
+      {
+        "fecha": "2009-12-31",
+        "formato": "SoundExchange Distributions",
+        "ingresos": 185.3
+      },
+      {"fecha": "2009-12-31", "formato": "Synchronization", "ingresos": 239.8},
+      {"fecha": "2009-12-31", "formato": "Vinyl Single", "ingresos": 3},
+      {"fecha": "2010-12-31", "formato": "CD", "ingresos": 3973.9},
+      {"fecha": "2010-12-31", "formato": "CD Single", "ingresos": 3.4},
+      {"fecha": "2010-12-31", "formato": "DVD Audio", "ingresos": 1.1},
+      {"fecha": "2010-12-31", "formato": "Download Album", "ingresos": 1022.8},
+      {
+        "fecha": "2010-12-31",
+        "formato": "Download Music Video",
+        "ingresos": 42.9
+      },
+      {"fecha": "2010-12-31", "formato": "Download Single", "ingresos": 1566.8},
+      {"fecha": "2010-12-31", "formato": "Kiosk", "ingresos": 7.5},
+      {"fecha": "2010-12-31", "formato": "LP/EP", "ingresos": 104.2},
+      {
+        "fecha": "2010-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 208.2
+      },
+      {"fecha": "2010-12-31", "formato": "Paid Subscription", "ingresos": 249},
+      {
+        "fecha": "2010-12-31",
+        "formato": "Ringtones & Ringbacks",
+        "ingresos": 525.3
+      },
+      {"fecha": "2010-12-31", "formato": "SACD", "ingresos": 2},
+      {
+        "fecha": "2010-12-31",
+        "formato": "SoundExchange Distributions",
+        "ingresos": 292.2
+      },
+      {"fecha": "2010-12-31", "formato": "Synchronization", "ingresos": 221.2},
+      {"fecha": "2010-12-31", "formato": "Vinyl Single", "ingresos": 2.7},
+      {"fecha": "2011-12-31", "formato": "CD", "ingresos": 3524.1},
+      {"fecha": "2011-12-31", "formato": "CD Single", "ingresos": 4},
+      {"fecha": "2011-12-31", "formato": "DVD Audio", "ingresos": 0.3},
+      {"fecha": "2011-12-31", "formato": "Download Album", "ingresos": 1217},
+      {
+        "fecha": "2011-12-31",
+        "formato": "Download Music Video",
+        "ingresos": 36.8
+      },
+      {"fecha": "2011-12-31", "formato": "Download Single", "ingresos": 1730.3},
+      {"fecha": "2011-12-31", "formato": "Kiosk", "ingresos": 3.1},
+      {"fecha": "2011-12-31", "formato": "LP/EP", "ingresos": 135.7},
+      {
+        "fecha": "2011-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 171.6
+      },
+      {
+        "fecha": "2011-12-31",
+        "formato": "On-Demand Streaming (Ad-Supported)",
+        "ingresos": 129.3
+      },
+      {
+        "fecha": "2011-12-31",
+        "formato": "Paid Subscription",
+        "ingresos": 281.6
+      },
+      {
+        "fecha": "2011-12-31",
+        "formato": "Ringtones & Ringbacks",
+        "ingresos": 313.9
+      },
+      {"fecha": "2011-12-31", "formato": "SACD", "ingresos": 1.7},
+      {
+        "fecha": "2011-12-31",
+        "formato": "SoundExchange Distributions",
+        "ingresos": 331.9
+      },
+      {"fecha": "2011-12-31", "formato": "Synchronization", "ingresos": 223.3},
+      {"fecha": "2011-12-31", "formato": "Vinyl Single", "ingresos": 5.2},
+      {"fecha": "2012-12-31", "formato": "CD", "ingresos": 2767.8},
+      {"fecha": "2012-12-31", "formato": "CD Single", "ingresos": 3.6},
+      {"fecha": "2012-12-31", "formato": "DVD Audio", "ingresos": 0.2},
+      {"fecha": "2012-12-31", "formato": "Download Album", "ingresos": 1341.6},
+      {
+        "fecha": "2012-12-31",
+        "formato": "Download Music Video",
+        "ingresos": 23.2
+      },
+      {"fecha": "2012-12-31", "formato": "Download Single", "ingresos": 1831.3},
+      {"fecha": "2012-12-31", "formato": "Kiosk", "ingresos": 4.1},
+      {"fecha": "2012-12-31", "formato": "LP/EP", "ingresos": 179},
+      {
+        "fecha": "2012-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 129.9
+      },
+      {
+        "fecha": "2012-12-31",
+        "formato": "On-Demand Streaming (Ad-Supported)",
+        "ingresos": 190.3
+      },
+      {
+        "fecha": "2012-12-31",
+        "formato": "Paid Subscription",
+        "ingresos": 445.3
+      },
+      {
+        "fecha": "2012-12-31",
+        "formato": "Ringtones & Ringbacks",
+        "ingresos": 162.6
+      },
+      {"fecha": "2012-12-31", "formato": "SACD", "ingresos": 1.5},
+      {
+        "fecha": "2012-12-31",
+        "formato": "SoundExchange Distributions",
+        "ingresos": 514.4
+      },
+      {"fecha": "2012-12-31", "formato": "Synchronization", "ingresos": 212.2},
+      {"fecha": "2012-12-31", "formato": "Vinyl Single", "ingresos": 5.3},
+      {"fecha": "2013-12-31", "formato": "CD", "ingresos": 2349.5},
+      {"fecha": "2013-12-31", "formato": "CD Single", "ingresos": 2.7},
+      {"fecha": "2013-12-31", "formato": "Download Album", "ingresos": 1352.2},
+      {
+        "fecha": "2013-12-31",
+        "formato": "Download Music Video",
+        "ingresos": 18.4
+      },
+      {"fecha": "2013-12-31", "formato": "Download Single", "ingresos": 1726.7},
+      {"fecha": "2013-12-31", "formato": "Kiosk", "ingresos": 6.8},
+      {"fecha": "2013-12-31", "formato": "LP/EP", "ingresos": 231.3},
+      {
+        "fecha": "2013-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 116.6
+      },
+      {
+        "fecha": "2013-12-31",
+        "formato": "On-Demand Streaming (Ad-Supported)",
+        "ingresos": 242.4
+      },
+      {"fecha": "2013-12-31", "formato": "Paid Subscription", "ingresos": 706},
+      {
+        "fecha": "2013-12-31",
+        "formato": "Ringtones & Ringbacks",
+        "ingresos": 107.5
+      },
+      {"fecha": "2013-12-31", "formato": "SACD", "ingresos": 1.1},
+      {
+        "fecha": "2013-12-31",
+        "formato": "SoundExchange Distributions",
+        "ingresos": 647.9
+      },
+      {"fecha": "2013-12-31", "formato": "Synchronization", "ingresos": 208.2},
+      {"fecha": "2013-12-31", "formato": "Vinyl Single", "ingresos": 3.3},
+      {"fecha": "2014-12-31", "formato": "CD", "ingresos": 1918.2},
+      {"fecha": "2014-12-31", "formato": "CD Single", "ingresos": 3.9},
+      {"fecha": "2014-12-31", "formato": "DVD Audio", "ingresos": 2.3},
+      {"fecha": "2014-12-31", "formato": "Download Album", "ingresos": 1207.2},
+      {
+        "fecha": "2014-12-31",
+        "formato": "Download Music Video",
+        "ingresos": 14.7
+      },
+      {"fecha": "2014-12-31", "formato": "Download Single", "ingresos": 1463.7},
+      {"fecha": "2014-12-31", "formato": "Kiosk", "ingresos": 2.8},
+      {"fecha": "2014-12-31", "formato": "LP/EP", "ingresos": 263.3},
+      {
+        "fecha": "2014-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 96.9
+      },
+      {
+        "fecha": "2014-12-31",
+        "formato": "On-Demand Streaming (Ad-Supported)",
+        "ingresos": 306.5
+      },
+      {
+        "fecha": "2014-12-31",
+        "formato": "Paid Subscription",
+        "ingresos": 831.8
+      },
+      {
+        "fecha": "2014-12-31",
+        "formato": "Ringtones & Ringbacks",
+        "ingresos": 71.6
+      },
+      {"fecha": "2014-12-31", "formato": "SACD", "ingresos": 0.8},
+      {
+        "fecha": "2014-12-31",
+        "formato": "SoundExchange Distributions",
+        "ingresos": 835.2
+      },
+      {"fecha": "2014-12-31", "formato": "Synchronization", "ingresos": 204.9},
+      {"fecha": "2014-12-31", "formato": "Vinyl Single", "ingresos": 5.9},
+      {"fecha": "2015-12-31", "formato": "CD", "ingresos": 1558.6},
+      {"fecha": "2015-12-31", "formato": "CD Single", "ingresos": 1.3},
+      {"fecha": "2015-12-31", "formato": "DVD Audio", "ingresos": 5.8},
+      {"fecha": "2015-12-31", "formato": "Download Album", "ingresos": 1148.1},
+      {
+        "fecha": "2015-12-31",
+        "formato": "Download Music Video",
+        "ingresos": 6.9
+      },
+      {"fecha": "2015-12-31", "formato": "Download Single", "ingresos": 1278.4},
+      {"fecha": "2015-12-31", "formato": "Kiosk", "ingresos": 4},
+      {"fecha": "2015-12-31", "formato": "LP/EP", "ingresos": 359.6},
+      {
+        "fecha": "2015-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 76
+      },
+      {
+        "fecha": "2015-12-31",
+        "formato": "On-Demand Streaming (Ad-Supported)",
+        "ingresos": 401.2
+      },
+      {
+        "fecha": "2015-12-31",
+        "formato": "Paid Subscription",
+        "ingresos": 1247.7
+      },
+      {
+        "fecha": "2015-12-31",
+        "formato": "Ringtones & Ringbacks",
+        "ingresos": 58.9
+      },
+      {"fecha": "2015-12-31", "formato": "SACD", "ingresos": 1.1},
+      {
+        "fecha": "2015-12-31",
+        "formato": "SoundExchange Distributions",
+        "ingresos": 865.7
+      },
+      {"fecha": "2015-12-31", "formato": "Synchronization", "ingresos": 218.9},
+      {"fecha": "2015-12-31", "formato": "Vinyl Single", "ingresos": 6.2},
+      {"fecha": "2016-12-31", "formato": "CD", "ingresos": 1204.5},
+      {"fecha": "2016-12-31", "formato": "CD Single", "ingresos": 0.3},
+      {"fecha": "2016-12-31", "formato": "DVD Audio", "ingresos": 3},
+      {"fecha": "2016-12-31", "formato": "Download Album", "ingresos": 925.2},
+      {
+        "fecha": "2016-12-31",
+        "formato": "Download Music Video",
+        "ingresos": 4.5
+      },
+      {"fecha": "2016-12-31", "formato": "Download Single", "ingresos": 958.9},
+      {"fecha": "2016-12-31", "formato": "Kiosk", "ingresos": 3.1},
+      {"fecha": "2016-12-31", "formato": "LP/EP", "ingresos": 378.6},
+      {
+        "fecha": "2016-12-31",
+        "formato": "Limited Tier Paid Subscription",
+        "ingresos": 280.5
+      },
+      {
+        "fecha": "2016-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 60.6
+      },
+      {
+        "fecha": "2016-12-31",
+        "formato": "On-Demand Streaming (Ad-Supported)",
+        "ingresos": 521.3
+      },
+      {
+        "fecha": "2016-12-31",
+        "formato": "Other Ad-Supported Streaming",
+        "ingresos": 86.6
+      },
+      {"fecha": "2016-12-31", "formato": "Other Digital", "ingresos": 18.3},
+      {
+        "fecha": "2016-12-31",
+        "formato": "Paid Subscription",
+        "ingresos": 2390.5
+      },
+      {
+        "fecha": "2016-12-31",
+        "formato": "Ringtones & Ringbacks",
+        "ingresos": 60
+      },
+      {"fecha": "2016-12-31", "formato": "SACD", "ingresos": 1.3},
+      {
+        "fecha": "2016-12-31",
+        "formato": "SoundExchange Distributions",
+        "ingresos": 941.5
+      },
+      {"fecha": "2016-12-31", "formato": "Synchronization", "ingresos": 228.8},
+      {"fecha": "2016-12-31", "formato": "Vinyl Single", "ingresos": 5.2},
+      {"fecha": "2017-12-31", "formato": "CD", "ingresos": 1102.8},
+      {"fecha": "2017-12-31", "formato": "CD Single", "ingresos": 1.5},
+      {"fecha": "2017-12-31", "formato": "DVD Audio", "ingresos": 2.7},
+      {"fecha": "2017-12-31", "formato": "Download Album", "ingresos": 697.2},
+      {
+        "fecha": "2017-12-31",
+        "formato": "Download Music Video",
+        "ingresos": 2.9
+      },
+      {"fecha": "2017-12-31", "formato": "Download Single", "ingresos": 707.7},
+      {"fecha": "2017-12-31", "formato": "Kiosk", "ingresos": 2.4},
+      {"fecha": "2017-12-31", "formato": "LP/EP", "ingresos": 405.2},
+      {
+        "fecha": "2017-12-31",
+        "formato": "Limited Tier Paid Subscription",
+        "ingresos": 617
+      },
+      {
+        "fecha": "2017-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 40.3
+      },
+      {
+        "fecha": "2017-12-31",
+        "formato": "On-Demand Streaming (Ad-Supported)",
+        "ingresos": 686.9
+      },
+      {
+        "fecha": "2017-12-31",
+        "formato": "Other Ad-Supported Streaming",
+        "ingresos": 273
+      },
+      {"fecha": "2017-12-31", "formato": "Other Digital", "ingresos": 17.6},
+      {"fecha": "2017-12-31", "formato": "Paid Subscription", "ingresos": 3651},
+      {
+        "fecha": "2017-12-31",
+        "formato": "Ringtones & Ringbacks",
+        "ingresos": 37
+      },
+      {"fecha": "2017-12-31", "formato": "SACD", "ingresos": 0.9},
+      {
+        "fecha": "2017-12-31",
+        "formato": "SoundExchange Distributions",
+        "ingresos": 680
+      },
+      {"fecha": "2017-12-31", "formato": "Synchronization", "ingresos": 242.1},
+      {"fecha": "2017-12-31", "formato": "Vinyl Single", "ingresos": 6.3},
+      {"fecha": "2018-12-31", "formato": "CD", "ingresos": 711},
+      {"fecha": "2018-12-31", "formato": "CD Single", "ingresos": 0.2},
+      {"fecha": "2018-12-31", "formato": "DVD Audio", "ingresos": 3.4},
+      {"fecha": "2018-12-31", "formato": "Download Album", "ingresos": 508.7},
+      {
+        "fecha": "2018-12-31",
+        "formato": "Download Music Video",
+        "ingresos": 2.3
+      },
+      {"fecha": "2018-12-31", "formato": "Download Single", "ingresos": 499.3},
+      {"fecha": "2018-12-31", "formato": "Kiosk", "ingresos": 2},
+      {"fecha": "2018-12-31", "formato": "LP/EP", "ingresos": 426.8},
+      {
+        "fecha": "2018-12-31",
+        "formato": "Limited Tier Paid Subscription",
+        "ingresos": 760.6
+      },
+      {
+        "fecha": "2018-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 28.1
+      },
+      {
+        "fecha": "2018-12-31",
+        "formato": "On-Demand Streaming (Ad-Supported)",
+        "ingresos": 773.3
+      },
+      {
+        "fecha": "2018-12-31",
+        "formato": "Other Ad-Supported Streaming",
+        "ingresos": 256
+      },
+      {"fecha": "2018-12-31", "formato": "Other Digital", "ingresos": 20.2},
+      {
+        "fecha": "2018-12-31",
+        "formato": "Paid Subscription",
+        "ingresos": 4740.3
+      },
+      {
+        "fecha": "2018-12-31",
+        "formato": "Ringtones & Ringbacks",
+        "ingresos": 25.4
+      },
+      {"fecha": "2018-12-31", "formato": "SACD", "ingresos": 0.9},
+      {
+        "fecha": "2018-12-31",
+        "formato": "SoundExchange Distributions",
+        "ingresos": 970.1
+      },
+      {"fecha": "2018-12-31", "formato": "Synchronization", "ingresos": 290.7},
+      {"fecha": "2018-12-31", "formato": "Vinyl Single", "ingresos": 5.4},
+      {"fecha": "2019-12-31", "formato": "CD", "ingresos": 614.5},
+      {"fecha": "2019-12-31", "formato": "CD Single", "ingresos": 0.2},
+      {"fecha": "2019-12-31", "formato": "DVD Audio", "ingresos": 1.1},
+      {"fecha": "2019-12-31", "formato": "Download Album", "ingresos": 394.5},
+      {
+        "fecha": "2019-12-31",
+        "formato": "Download Music Video",
+        "ingresos": 1.9
+      },
+      {"fecha": "2019-12-31", "formato": "Download Single", "ingresos": 414.8},
+      {"fecha": "2019-12-31", "formato": "Kiosk", "ingresos": 1.6},
+      {"fecha": "2019-12-31", "formato": "LP/EP", "ingresos": 497.6},
+      {
+        "fecha": "2019-12-31",
+        "formato": "Limited Tier Paid Subscription",
+        "ingresos": 829.5
+      },
+      {
+        "fecha": "2019-12-31",
+        "formato": "Music Video (Physical)",
+        "ingresos": 27.7
+      },
+      {
+        "fecha": "2019-12-31",
+        "formato": "On-Demand Streaming (Ad-Supported)",
+        "ingresos": 908.1
+      },
+      {
+        "fecha": "2019-12-31",
+        "formato": "Other Ad-Supported Streaming",
+        "ingresos": 251.1
+      },
+      {"fecha": "2019-12-31", "formato": "Other Digital", "ingresos": 21.5},
+      {
+        "fecha": "2019-12-31",
+        "formato": "Paid Subscription",
+        "ingresos": 5934.4
+      },
+      {
+        "fecha": "2019-12-31",
+        "formato": "Ringtones & Ringbacks",
+        "ingresos": 21.4
+      },
+      {"fecha": "2019-12-31", "formato": "SACD", "ingresos": 0.4},
+      {
+        "fecha": "2019-12-31",
+        "formato": "SoundExchange Distributions",
+        "ingresos": 908.2
+      },
+      {"fecha": "2019-12-31", "formato": "Synchronization", "ingresos": 276.3},
+      {"fecha": "2019-12-31", "formato": "Vinyl Single", "ingresos": 6.8}
+    ]
+  }
+}
+
+      // Embed the visualization in the container with id `vis`
+      vegaEmbed('#vis', vlSpec);
+    </script>
+  </body>
+</html>
